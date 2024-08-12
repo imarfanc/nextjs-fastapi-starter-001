@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background: url("https://picsum.photos/275/1100?grayscale&blur=2") no-repeat
+        center center fixed;
+    background-size: cover;
+    color: #ecf0f1;
+    min-height: 100vh;
+    transition: background-image 0.5s ease-in-out;
+}
+
+#app {
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+h1 {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 15px;
+    margin-right: 80px;
+}
+
+#top-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#settingsButton,
+#use-last-folder {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+#status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(52, 73, 94, 0.7);
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#folder-select,
+#python-interpreter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#folder-select input,
+#python-interpreter input {
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #ecf0f1;
+}
+
+button {
+    padding: 8px;
+    font-size: 14px;
+    background-color: rgba(52, 152, 219, 0.7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgba(41, 128, 185, 0.9);
+}
+
+#last-used-app {
+    margin: 10px 0;
+    font-style: italic;
+    font-size: 14px;
+}
+
+#folder-structure {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.category {
+    background-color: rgba(52, 73, 94, 0.7);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.category-header {
+    padding: 10px 15px;
+    background-color: rgba(41, 128, 185, 0.7);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.toggle-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.category-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.category-content.expanded {
+    max-height: 500px;
+}
+
+.category ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category li {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category li:last-child {
+    border-bottom: none;
+}
+
+.category li:hover {
+    background-color: rgba(52, 152, 219, 0.7);
+}
+
+.settings-popover {
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    background-color: rgba(52, 73, 94, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.settings-popover h3 {
+    margin-top: 0;
+}
+
+.settings-popover button {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: rgba(52, 152, 219, 0.7);
+}
+
+.settings-popover button:hover {
+    background-color: rgba(41, 128, 185, 0.9);
+}
